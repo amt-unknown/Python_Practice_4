@@ -1,4 +1,7 @@
 #Finds the maximum of '3' numbers
+from math import prod
+
+
 def max_num(*arg):
     max = 0
     for i in arg:
@@ -9,13 +12,19 @@ def max_num(*arg):
 
 ##########################################################################        
 
-#Multiply all numbers in a list by a given number
-def mult_list(factor, list=[]):
+#Multiply all numbers in a list
+def mult_list(list=[]):
     
-    for i in range(len(list)):
-        list[i] *= factor
-    print(list)
-    return list
+    product = 1
+
+    if len(list) == 0: 
+        product = 0
+    else:    
+        product = 1
+        for i in list:
+            product *= i
+    print(product)
+    return product
 
 ##########################################################################        
 
@@ -102,9 +111,9 @@ print("----------------")
 #mult_list:
 print("mult_list tests")
 print("----------------")
-mult_list(2)
-mult_list(2,[1,2,3,4])
-mult_list(5,[1,2,3,4])
+mult_list([])
+mult_list([1,2])
+mult_list([1,2,3,4])
 print("----------------")
 
 #rev_string:
